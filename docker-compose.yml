@@ -1,0 +1,11 @@
+services:
+  the-wallet:
+    build: .
+    container_name: the-wallet
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - wallet_data:/srv/the-wallet/data
+volumes:
+  wallet_data:
